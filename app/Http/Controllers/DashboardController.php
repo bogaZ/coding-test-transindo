@@ -23,8 +23,13 @@ class DashboardController extends Controller
             $checkData = $request->validate([
                 'name' => ['required', 'unique:sampahs,name'],
                 'description' => ['required'],
-                'harga' => ['required', 'numeric', 'min:500']
+                'harga' => ['required', 'numeric', 'min:500'],
+                'link_foto' => ['required', 'image']
             ]);
+            $photoPath = $request->file('link_foto')->store('public/photos');
+
+            $checkData['link_foto'] = $photoPath;
+
             Sampah::create($checkData);
             return redirect('dashboard')->with('success', 'Data berhasil ditambahkan');
         } catch (ValidationException $e) {

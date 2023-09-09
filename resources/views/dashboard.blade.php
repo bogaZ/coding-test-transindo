@@ -25,6 +25,11 @@
                     {{ $errors->first('harga') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+            @elseif ($errors->has('link_foto'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $errors->first('link_foto') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             @endif
         </div>
         <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Tambah
@@ -116,7 +121,7 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Jenis Sampah</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/store-sampah" method="POST">
+                <form action="/store-sampah" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         @csrf
                         <div class="mb-3">
@@ -134,11 +139,16 @@
                             <input name="harga" type="number" value="{{ old('harga') }}" class="form-control"
                                 id="exampleInputPassword" placeholder="Masukkan harga jenis sampah">
                         </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Pilih Foto</label>
+                            <input name="link_foto" class="form-control" type="file" id="formFile">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-success">Simpan</button>
                     </div>
+
                 </form>
             </div>
         </div>

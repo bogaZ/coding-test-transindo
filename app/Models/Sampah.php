@@ -12,5 +12,6 @@ class Sampah extends Model
         'name',
         'description',
         'harga',
+        'link_foto'
     ];
 }
