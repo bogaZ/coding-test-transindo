@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
 @section('container')
+    <div style="height: 50px"></div>
     <form action="/hitung" method="POST">
-        <div style="height: 50px"></div>
         <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh">
-            <div style="min-width: 60%">
+            <div style="padding: 20px; width: 100vh">
                 <h4 style="color: rgb(75, 75, 75)">Website penghitung harga sampah</h4>
                 <p style="color: rgb(158, 158, 158)">Hitung berapa harga sampah berdasarkan jenisnya</p>
                 <br>
-                <div class="p-4 rounded-4" style="background: rgb(247, 255, 246)">
+                <div class="p-4 rounded-4" style="background: rgb(211, 255, 206)">
                     <h1>Mulai mengitung!</h1>
 
                     @csrf
@@ -22,7 +22,8 @@
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="exampleInputPassword1" class="form-label">Jumlah dalam <strong>Kg</strong></label>
+                            <label for="exampleInputPassword1" class="form-label">Jumlah dalam
+                                <strong>Kg</strong></label>
                             <input name="jumlah" type="number" class="form-control" placeholder="Masukkan jumlah dalam Kg"
                                 required>
                         </div>
@@ -34,10 +35,5 @@
                         </div>
                     </div>
                 </div>
-
-
     </form>
-
-    </div>
-    </div>
 @endsection

@@ -1,32 +1,32 @@
 @extends('layouts.main')
 
 @section('container')
-    <div style="height: 50px"></div>
-    <div style="margin-top: 50px" class="col-6">
-        @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-        @if ($errors->has('name'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ $errors->first('name') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @elseif ($errors->has('description'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ $errors->first('description') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @elseif ($errors->has('harga'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ $errors->first('harga') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-    </div>
-    <div>
+    <div class="container p-4">
+        <div style="height: 50px"></div>
+        <div style="margin-top: 30px" class="col-6">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if ($errors->has('name'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $errors->first('name') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @elseif ($errors->has('description'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $errors->first('description') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @elseif ($errors->has('harga'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $errors->first('harga') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
         <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Tambah
             Jenis Sampah</button>
         <table class="table mt-4 table-bordered table-striped table-hover">
@@ -82,9 +82,9 @@
                                                 class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                                 placeholder="Masukkan nama jenis sampah" required>
                                         </div>
-                                        <div class="form-floating mb-3">
-                                            <textarea name="description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" required>{{ $data->description }}</textarea>
-                                            <label for="floatingTextarea2">Deskripsi</label>
+                                        <div class="mb-3">
+                                            <label for="floatingTextarea2" class="form-label">Deskripsi</label>
+                                            <textarea name="description" class="form-control" placeholder="Masukkan Deskripsi" id="floatingTextarea2" required>{{ $data->description }}</textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword" class="form-label">Harga /
@@ -97,7 +97,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-warning">Update</button>
+                                        <button type="submit" class="btn btn-success">Update</button>
                                     </div>
                                 </form>
                             </div>
@@ -125,10 +125,9 @@
                                 id="exampleInputEmail1" aria-describedby="emailHelp"
                                 placeholder="Masukkan nama jenis sampah" required>
                         </div>
-                        <div class="form-floating mb-3">
-                            <textarea name="description" class="form-control h-100" placeholder="Leave a comment here" id="floatingTextarea2"
-                                required>{{ old('description') }}</textarea>
-                            <label for="floatingTextarea2">Deskripsi</label>
+                        <div class="mb-3">
+                            <label for="floatingTextarea2" class="form-label">Deskripsi</label>
+                            <textarea name="description" class="form-control" placeholder="Masukkan Deskripsi" id="floatingTextarea2" required>{{ old('description') }}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword" class="form-label">Harga / <strong>Kg</strong></label>

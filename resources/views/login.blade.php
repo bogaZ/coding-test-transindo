@@ -10,7 +10,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            <div class="p-4 rounded-4" style="background: rgb(247, 255, 246)">
+            <div class="p-4 rounded-4" style="background: rgb(211, 255, 206)">
                 <h1>Login Admin</h1>
                 <form action="/checklogin" method="POST">
                     @csrf
