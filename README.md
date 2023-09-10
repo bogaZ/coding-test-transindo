@@ -27,6 +27,8 @@ _Ketika website ini dikembangkan menggunakan beberapa recruitment berikut ini :_
 
     `php artisan migrate:refresh --seed`
 
+    `php artisan storage:link`
+
     `php artisan serve`
 
 -   _Lalu akses aplikasi sesuai nama domain misal :_ http://localhost:8000/
