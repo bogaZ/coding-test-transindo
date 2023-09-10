@@ -5,12 +5,22 @@
     <form action="/hitung" method="POST">
         <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh">
             <div style="padding: 20px; width: 100vh">
+                @if ($errors->has('id'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ $errors->first('id') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @elseif ($errors->has('jumlah'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ $errors->first('jumlah') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <h4 style="color: rgb(75, 75, 75)">Website penghitung harga sampah</h4>
                 <p style="color: rgb(158, 158, 158)">Hitung berapa harga sampah berdasarkan jenisnya</p>
                 <br>
                 <div class="p-4 rounded-4" style="background: rgb(211, 255, 206)">
                     <h1>Mulai mengitung!</h1>
-
                     @csrf
                     <div class="row">
                         <div class="mb-3 col-md-6">
