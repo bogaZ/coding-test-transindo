@@ -21,7 +21,7 @@ class SampahController extends Controller
 
             $total = $data['harga'] * $request['jumlah'];
 
-            return view('/total', ['datas' => $total]);
+            return view('/total', ['total' => $total, 'data' => $data, 'jumlah' => $request['jumlah']]);
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors())->withInput();
         }

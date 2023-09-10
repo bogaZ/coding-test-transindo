@@ -58,7 +58,7 @@
                             <strong>{{ 'Rp. ' . number_format($data->harga, 0, ',', '.') }}</strong>
                         </td>
                         <td>
-                            <img width="100px" src="{{ asset('storage/photos/' . $data->link_foto) }}"
+                            <img class="img-fluid" width="100px" src="{{ asset('storage/photos/' . $data->link_foto) }}"
                                 alt="{{ $data->name }}">
                         </td>
                         <td>

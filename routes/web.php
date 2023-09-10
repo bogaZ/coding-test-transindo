@@ -4,7 +4,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SampahController;
 use App\Http\Controllers\UserController;
 use App\Models\Sampah;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +24,6 @@ Route::get('/', function () {
 });
 
 Route::post('/hitung', [SampahController::class, 'hitung']);
-
-Route::get('/total', [SampahController::class, 'showTotal']);
 
 Route::middleware(['guest'])->group(function () {
     Route::view('/login', 'login')->name('login');
