@@ -2,6 +2,14 @@
 
 _Website ini diperuntukan untuk melakukan coding test pada peserta recruitment sebagai web developer di Pt. Transindo Data Perkasa yang nantinya akan ditempatkan di RSUD Genteng Kota Banyuwangi_
 
+### Recruitment
+
+_Ketika website ini dikembangkan menggunakan beberapa recruitment berikut ini :_
+
+- **PHP Version 8.2.2**
+- **Composer 2.5.2**
+- **Laravel 10.x**
+
 ### Configurasi
 
 -   _Clone project dengan cara buka terminal ketikan :_
@@ -15,14 +23,13 @@ _Website ini diperuntukan untuk melakukan coding test pada peserta recruitment s
 
     `composer update`
 
+    `php artisan key:generate`
+
     `php artisan migrate:refresh --seed`
 
     `php artisan serve`
 
 -   _Lalu akses aplikasi sesuai nama domain misal :_ http://localhost:8000/
--   _Halaman website akan error dikarenakan anda harus meregenerate APP Keys_
--   **Generate APP KEYS**
--   _Akses kembali website sesuai nama domain misal :_ http://localhost:8000/
 -   _Jika berhasil anda akan diarahkan ke halaman home_
 -   _Login ke dashboard admin dengan menggunakan :_
 -   _Username :_ **admin@gmail.com**
