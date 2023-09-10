@@ -41,6 +41,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Deskripsi</th>
                     <th scope="col">Harga</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -52,8 +53,13 @@
                         <td>
                             {{ $data->description }}
                         </td>
+
                         <td class="text-nowrap text-truncate" style="max-width: 200px;">
                             <strong>{{ 'Rp. ' . number_format($data->harga, 0, ',', '.') }}</strong>
+                        </td>
+                        <td>
+                            <img width="100px" src="{{ asset('storage/photos/' . $data->link_foto) }}"
+                                alt="{{ $data->name }}">
                         </td>
                         <td>
                             <div class="d-flex">

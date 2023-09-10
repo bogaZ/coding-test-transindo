@@ -29,7 +29,7 @@ class DashboardController extends Controller
             ]);
             $photoPath = $request->file('link_foto')->store('public/photos');
 
-            $checkData['link_foto'] = $photoPath;
+            $checkData['link_foto'] = basename($photoPath);
 
             Sampah::create($checkData);
             return redirect('dashboard')->with('success', 'Data berhasil ditambahkan');
@@ -44,6 +44,8 @@ class DashboardController extends Controller
         $data = Sampah::find($id);
 
         $nameSampah = $data['name'];
+
+        Storage::delete('public/photos/' . $data->link_foto);
 
         $data->delete();
 
@@ -73,9 +75,9 @@ class DashboardController extends Controller
                     'link_foto' => ['required', 'image']
                 ]);
 
-                Storage::delete($data->link_foto);
+                Storage::delete('public/photos/' . $data->link_foto);
 
-                $photoPath = $request->file('link_foto')->store('public/photos');
+                $photoPath = basename($request->file('link_foto')->store('public/photos'));
 
                 $newData['link_foto'] = $photoPath;
             }
