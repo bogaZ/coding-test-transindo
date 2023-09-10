@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh">
+    <div style="height: 50px"></div>
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh">
         <div>
             @if (session('error'))
                 <div style="width: 50px"></div>
@@ -10,8 +11,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            <h2 style="color: rgb(75, 75, 75)">Login Admin</h2>
+            <p style="color: rgb(158, 158, 158)">Silakan login untuk mengakses dashboard !</p>
             <div class="p-4 rounded-4" style="background: rgb(211, 255, 206)">
-                <h1>Login Admin</h1>
                 <form action="/checklogin" method="POST">
                     @csrf
                     <div class="mb-3">

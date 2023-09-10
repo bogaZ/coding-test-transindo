@@ -27,7 +27,7 @@
                 </ul>
                 <ul class="navbar-nav d-flex ">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" aria-current="page" href="/home">Home</a>
                     </li>
 
                     @auth
