@@ -77,7 +77,8 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <form action="/update-sampah/{{ $data->id }}" method="POST">
+                                <form action="/update-sampah/{{ $data->id }}" method="POST"
+                                    enctype="multipart/form-data">
                                     <div class="modal-body">
                                         @csrf
                                         @method('PUT')
@@ -97,6 +98,10 @@
                                             <input name="harga" type="number" value="{{ $data->harga }}"
                                                 class="form-control" id="exampleInputPassword"
                                                 placeholder="Masukkan harga jenis sampah">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label">Pilih Foto</label>
+                                            <input name="link_foto" class="form-control" type="file" id="formFile">
                                         </div>
                                     </div>
                                     <div class="modal-footer">

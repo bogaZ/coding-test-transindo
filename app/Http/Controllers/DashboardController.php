@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sampah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
 class DashboardController extends Controller
@@ -66,6 +67,18 @@ class DashboardController extends Controller
                 'description' => ['required'],
                 'harga' => ['required', 'numeric', 'min:500']
             ]);
+
+            if ($request['link_foto']) {
+                $request->validate([
+                    'link_foto' => ['required', 'image']
+                ]);
+
+                Storage::delete($data->link_foto);
+
+                $photoPath = $request->file('link_foto')->store('public/photos');
+
+                $newData['link_foto'] = $photoPath;
+            }
 
             $data->update($newData);
 
